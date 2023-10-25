@@ -2,7 +2,7 @@
 
 from functools import partial
 
-from pycalc.constants import ERROR_MSG
+from pycalc.constants import *
 
 # Main calculator controller class
 # Connects the view (GUI) with the model (business logic)
@@ -57,7 +57,7 @@ class PyCalcCtrl():
             None
         """
 
-        result = self._evaluate(expression=self._view.displayText())
+        result = self._evaluate(expression=self._view.displayText()+"1")
         self._view.setDisplayText(result)
         
     def _buildExpression(self, sub_exp):
@@ -91,5 +91,5 @@ class PyCalcCtrl():
                 btn.clicked.connect(partial(self._buildExpression, btnText))
         
         self._view.buttons["="].clicked.connect(self._calculateResult)
-        self._view.display.returnPressed.connect(self._calculateResult)
+        # self._view.display.returnPressed.connect(self._calculateResult)
         self._view.buttons["C"].clicked.connect(self._view.clearDisplay)
