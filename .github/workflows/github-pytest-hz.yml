@@ -17,4 +17,4 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov
-          python3 -m pytest  
+          pytest  
