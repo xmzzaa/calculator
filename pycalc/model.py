@@ -1,6 +1,7 @@
 # model.py
 
-from pycalc.constants import *
+from pycalc.constants import ERROR_MSG
+
 
 # Simple "model" to handle calculator functionality
 # This function just uses the Python "eval()" function
@@ -20,7 +21,7 @@ def evaluateExpression(expression):
     """
     try:
         result = str(eval(expression, {}, {}))
-    except:
+    except TypeError:
         result = ERROR_MSG
-        
+
     return result

@@ -5,14 +5,12 @@
 
 """ Simple calculator built with Python and PyQt5 library """
 
-import os
 import sys
 
 from .view import PyCalcUi
 from .controller import PyCalcCtrl
 from .model import evaluateExpression
 
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication
 
 __version__ = "0.1"
