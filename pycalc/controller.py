@@ -58,7 +58,7 @@ class PyCalcCtrl:
             None
         """
 
-        result = self._evaluate(expression=self._view.displayText() + "1")
+        result = self._evaluate(expression=self._view.displayText())
         self._view.setDisplayText(result)
 
     def _buildExpression(self, sub_exp):
@@ -92,5 +92,5 @@ class PyCalcCtrl:
                 btn.clicked.connect(partial(self._buildExpression, btnText))
 
         self._view.buttons["="].clicked.connect(self._calculateResult)
-        # self._view.display.returnPressed.connect(self._calculateResult)
+        self._view.display.returnPressed.connect(self._calculateResult)
         self._view.buttons["C"].clicked.connect(self._view.clearDisplay)
